@@ -1,0 +1,12 @@
+.sidebar-button {
+    width: 100%;
+    text-align: left; /* optional, aligns text to the left if you want */
+    padding: 8px 16px;
+    border-radius: 8px;
+    transition: background-color 0.3s ease;
+  }
+  
+  .sidebar-button:hover {
+    background-color: #b2ebf2; /* light hover background */
+  }
+  
