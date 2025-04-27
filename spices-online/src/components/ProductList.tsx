@@ -1,11 +1,10 @@
 import Grid from '@mui/material/Grid';
 import ProductCard from './ProductCard';
-import idlipodi from '../assets/idlipodi.jpg'
 
-const products = Array.from({ length: 6 }, (_, i) => ({
+const products = Array.from({ length: 8 }, (_, i) => ({
   id: i,
   name: `Product ${i + 1}`,
-  image: idlipodi,  
+  image: 'https://via.placeholder.com/150',  
   price: (i + 1) * 10,
 }));
 
