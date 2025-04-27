@@ -1,6 +1,6 @@
 import { Box, Button } from '@mui/material';
 
-const Sidebar = () => {
+const SideBar = () => {
   return (
     <Box sx={{ display: 'flex', flexDirection: 'column', gap: 3, p: 3}}>
       <Button variant="contained">Home</Button>
@@ -11,4 +11,4 @@ const Sidebar = () => {
   );
 };
 
-export default Sidebar;
+export default SideBar;

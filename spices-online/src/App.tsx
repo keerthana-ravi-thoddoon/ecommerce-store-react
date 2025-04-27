@@ -1,13 +1,41 @@
-import './App.css'
-import Header from './components/Header'
+import { Box, Badge, IconButton } from '@mui/material';
+import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
+import Header from './components/Header';
+import Sidebar from './components/SideBar';
+import ProductList from './components/ProductList';
+import Footer from './components/Footer';
+import { useState } from 'react';
 
-function App() {
+const App = () => {
+  const [cart, setCart] = useState<number[]>([]);
+
+  const handleAddToCart = (id: number) => {
+    setCart((prev) => [...prev, id]);
+  };
 
   return (
-    <>
-    <Header></Header>
-    </>
-  )
-}
+    <Box sx={{minHeight: '100vh', backgroundColor: '#f5f5f5', padding: 2}}>
+      <Header />
+            <Box sx={{ position: 'absolute', top: 16, right: 16 }}>
+        <IconButton size="large" color="inherit">
+          <Badge badgeContent={cart.length} color="error">
+            <ShoppingCartIcon />
+          </Badge>
+        </IconButton>
+      </Box>
 
-export default App
+      <Box sx={{ display: 'flex' }}>
+        <Box sx={{ width: '200px', borderRight: '1px solid gray' }}>
+          <Sidebar />
+        </Box>
+        <Box sx={{ flexGrow: 1, p: 3 }}>
+          <ProductList onAddToCart={handleAddToCart} />
+        </Box>
+      </Box>
+
+      <Footer />
+    </Box>
+  );
+};
+
+export default App;
