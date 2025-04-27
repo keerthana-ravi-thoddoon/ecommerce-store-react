@@ -1,12 +1,13 @@
 import { Box, Button } from '@mui/material';
+import '../styles/sidebar.css';
 
 const SideBar = () => {
   return (
-    <Box sx={{ display: 'flex', flexDirection: 'column', gap: 3, p: 3}}>
-      <Button variant="contained">Home</Button>
-      <Button variant="contained">Products</Button>
-      <Button variant="contained">About</Button>
-      <Button variant="contained">Contact</Button>
+    <Box sx={{ height: '100vh', backgroundColor: '#e0f7fa'}}>
+      <Button variant="text" fullWidth className='sidebar-button'>Home</Button>
+      <Button variant="text" fullWidth className='sidebar-button'>Products</Button>
+      <Button variant="text" fullWidth className='sidebar-button'>About</Button>
+      <Button variant="text" fullWidth className='sidebar-button'>Contact</Button>
     </Box>
   );
 };
