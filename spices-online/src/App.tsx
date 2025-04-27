@@ -1,10 +1,11 @@
-import { Box, Badge, IconButton } from '@mui/material';
-import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
+import { Box, Toolbar } from '@mui/material';
 import Header from './components/Header';
 import Sidebar from './components/SideBar';
 import ProductList from './components/ProductList';
 import Footer from './components/Footer';
 import { useState } from 'react';
+import { Badge, IconButton } from '@mui/material';
+import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 
 const App = () => {
   const [cart, setCart] = useState<number[]>([]);
@@ -14,9 +15,12 @@ const App = () => {
   };
 
   return (
-    <Box sx={{minHeight: '100vh', backgroundColor: '#f5f5f5', padding: 2}}>
+    <Box sx={{ minHeight: '100vh', backgroundColor: '#f5f5f5' }}>
       <Header />
-            <Box sx={{ position: 'absolute', top: 16, right: 16 }}>
+
+      <Toolbar />
+
+      <Box sx={{ position: 'absolute', top: 16, right: 16 }}>
         <IconButton size="large" color="inherit">
           <Badge badgeContent={cart.length} color="error">
             <ShoppingCartIcon />
